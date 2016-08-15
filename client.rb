@@ -23,7 +23,7 @@ module Singleplatform
       Request.get(url)
     end
 
-    def locations_updated_since(date)
+    def updated_since(date)
       url = generate_url('/locations/updated_since/', date: date)
       Request.get(url)
     end
