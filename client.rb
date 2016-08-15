@@ -18,13 +18,16 @@ module Singleplatform
       @client_secret = CLIENT_SECRET
     end
 
-    def locations(id)
-      url = generate_url("/locations/#{id}/")
+    def locations(id, options = {})
+      url = generate_url("/locations/#{id}/", options)
       Request.get(url)
     end
 
-    def updated_since(date)
-      url = generate_url('/locations/updated_since/', date: date)
+    def updated_since(date, options = {})
+      url = generate_url(
+                         '/locations/updated_since/',
+                         { date: date }.merge(options)
+                        )
       Request.get(url)
     end
 
