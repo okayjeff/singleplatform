@@ -31,6 +31,11 @@ module Singleplatform
       Request.get(url)
     end
 
+    def menus(id, options = {})
+      url = generate_url("/locations/#{id}/menus", options)
+      Request.get(url)
+    end
+
     private
 
     def generate_url(path, params = {})
