@@ -2,7 +2,7 @@ require 'httparty'
 
 module Singleplatform
   class Request
-    def get(url)
+    def self.get(url)
       tries = 3
       HTTParty.get(url)
     rescue
