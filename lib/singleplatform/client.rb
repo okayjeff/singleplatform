@@ -1,10 +1,10 @@
 require 'dotenv'
 Dotenv.load
 
-require_relative 'client/request'
-require_relative 'client/locations'
-require_relative 'client/menus'
-require_relative 'client/photos'
+require 'client/request'
+require 'client/locations'
+require 'client/menus'
+require 'client/photos'
 
 module Singleplatform
   class Client

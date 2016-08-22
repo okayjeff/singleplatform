@@ -1,4 +1,4 @@
-require_relative 'singleplatform/client'
+require 'singleplatform/client'
 
 module Singleplatform
 
