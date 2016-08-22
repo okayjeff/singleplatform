@@ -11,7 +11,7 @@ require_relative 'client/menus'
 
 module Singleplatform
   class Client
-    HOST = ENV['HOST'].freeze
+    BASE_URL = ENV['BASE_URL'].freeze
     API_KEY = ENV['API_KEY'].freeze
     CLIENT_ID = ENV['CLIENT_ID'].freeze
     CLIENT_SECRET = ENV['CLIENT_SECRET'].freeze
@@ -20,7 +20,7 @@ module Singleplatform
     include Singleplatform::Client::Menus
 
     def initialize
-      @host          = HOST
+      @base_url      = BASE_URL
       @client_id     = CLIENT_ID
       @client_secret = CLIENT_SECRET
     end
@@ -51,7 +51,7 @@ module Singleplatform
         query_string += "#{k}=#{v}&"
       end
       signature_base_string = "#{path}?#{query_string}client=#{@client_id}"
-      "#{@host}#{signature_base_string}&signature=#{generate_signature(signature_base_string)}"
+      "#{@base_url}#{signature_base_string}&signature=#{generate_signature(signature_base_string)}"
     end
 
     def generate_signature(base_string)

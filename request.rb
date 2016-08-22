@@ -1,17 +1,16 @@
 require 'httparty'
+require 'hashie'
 
 module Singleplatform
   class Request
     def self.get(url)
       tries ||= 3
-      puts tries
-      HTTParty.get(url)
+      response = HTTParty.get(url)
     rescue Exception => e
       sleep 3
-      if (tries -= 1) > 0
+      if tries -= 1 > 0
         retry
       else
-        puts e
         nil
       end
     else
