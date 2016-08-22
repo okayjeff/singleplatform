@@ -1,6 +1,3 @@
-require 'dotenv'
-Dotenv.load
-
 require 'singleplatform/client'
 
 module Singleplatform
