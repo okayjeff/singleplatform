@@ -1,9 +1,6 @@
 require 'dotenv'
 Dotenv.load
-require 'base64'
-require 'openssl'
-require 'cgi'
-require 'bundler'
+
 require_relative 'client/request'
 require_relative 'client/locations'
 require_relative 'client/menus'
