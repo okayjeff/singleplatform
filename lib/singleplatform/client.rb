@@ -1,7 +1,7 @@
-require 'client/request'
-require 'client/locations'
-require 'client/menus'
-require 'client/photos'
+require 'singleplatform/client/request'
+require 'singleplatform/client/locations'
+require 'singleplatform/client/menus'
+require 'singleplatform/client/photos'
 
 module Singleplatform
   class Client
