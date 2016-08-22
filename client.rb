@@ -25,24 +25,6 @@ module Singleplatform
       @client_secret = CLIENT_SECRET
     end
 
-    def locations(id, options = {})
-      url = generate_url("/locations/#{id}/", options)
-      Request.get(url)
-    end
-
-    def updated_since(date, options = {})
-      url = generate_url(
-                         '/locations/updated_since/',
-                         { date: date }.merge(options)
-                        )
-      Request.get(url)
-    end
-
-    def menus(id, options = {})
-      url = generate_url("/locations/#{id}/menus", options)
-      Request.get(url)
-    end
-
     private
 
     def generate_url(path, params = {})
