@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A Ruby client library for accessing the SinglePlatform API."
   s.authors     = ["Jeff Gharakhanian"]
   s.email       = 'jg@okayjeff.com'
-  s.files       = ["lib/hola.rb"]
+  s.files       = ["lib/singleplatform.rb"]
   s.homepage    = 'http://rubygems.org/gems/hola'
   s.license     = 'MIT'
 end
