@@ -3,6 +3,10 @@ require 'hashie'
 
 module Singleplatform
   class Request
+    # Make an HTTP get request to given URL
+    #
+    # @param url [String]
+    # @return [Hash]
     def self.get(url)
       tries ||= 3
       response = HTTParty.get(url)

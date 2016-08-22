@@ -14,6 +14,9 @@ module Singleplatform
     include Singleplatform::Client::Menus
     include Singleplatform::Client::Photos
 
+    # Initializes a new API Client Object
+    #
+    # @return [Singleplatform::Client]
     def initialize
       @base_url      = BASE_URL
       @client_id     = CLIENT_ID
@@ -22,6 +25,12 @@ module Singleplatform
 
     private
 
+    # Form the complete URL for a given endpoint
+    # @note Signature must be the last parameter
+    #
+    # @param path [String]
+    # @param params [Hash]
+    # @return [String]
     def generate_url(path, params = {})
       query_string = ''
       params.each do |k, v|
@@ -31,6 +40,10 @@ module Singleplatform
       "#{@base_url}#{signature_base_string}&signature=#{generate_signature(signature_base_string)}"
     end
 
+    # Calculate the signature, Base64 encode it and URL encode
+    #
+    # @param base_string [String]
+    # @return [String]
     def generate_signature(base_string)
       key = OpenSSL::HMAC.digest('sha1', @client_secret, base_string)
       CGI::escape(Base64.encode64(key).chomp)
