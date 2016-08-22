@@ -1,6 +1,3 @@
-require 'dotenv'
-Dotenv.load
-
 require 'client/request'
 require 'client/locations'
 require 'client/menus'
