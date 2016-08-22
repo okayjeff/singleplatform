@@ -14,6 +14,7 @@ module Singleplatform
 
     include Singleplatform::Client::Locations
     include Singleplatform::Client::Menus
+    include Singleplatform::Client::Photos
 
     def initialize
       @base_url      = BASE_URL
