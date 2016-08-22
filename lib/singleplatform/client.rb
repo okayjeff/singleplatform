@@ -5,9 +5,9 @@ require 'singleplatform/client/photos'
 
 module Singleplatform
   class Client
-    BASE_URL = ENV['BASE_URL'].freeze
-    API_KEY = ENV['API_KEY'].freeze
-    CLIENT_ID = ENV['CLIENT_ID'].freeze
+    BASE_URL      = ENV['BASE_URL'].freeze
+    API_KEY       = ENV['API_KEY'].freeze
+    CLIENT_ID     = ENV['CLIENT_ID'].freeze
     CLIENT_SECRET = ENV['CLIENT_SECRET'].freeze
 
     include Singleplatform::Client::Locations
