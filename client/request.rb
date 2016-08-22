@@ -1,4 +1,5 @@
 require 'httparty'
+require 'json'
 require 'hashie'
 
 module Singleplatform

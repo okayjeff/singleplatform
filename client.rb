@@ -3,7 +3,6 @@ Dotenv.load
 require 'base64'
 require 'openssl'
 require 'cgi'
-require 'json'
 require 'bundler'
 require_relative 'client/request'
 require_relative 'client/locations'
