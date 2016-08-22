@@ -3,12 +3,17 @@ require 'httparty'
 module Singleplatform
   class Request
     def self.get(url)
-      tries = 3
+      tries ||= 3
+      puts tries
       HTTParty.get(url)
-    rescue
+    rescue Exception => e
       sleep 3
-      retry if (tries -= 1) > 0
-      nil
+      if (tries -= 1) > 0
+        retry
+      else
+        puts e
+        nil
+      end
     else
       Hashie::Mash.new(JSON.parse(response.body)).data
     end

@@ -4,7 +4,10 @@ require 'base64'
 require 'openssl'
 require 'cgi'
 require 'json'
+require 'bundler'
 require_relative 'request'
+require_relative 'client/locations'
+require_relative 'client/menus'
 
 module Singleplatform
   class Client
@@ -12,6 +15,9 @@ module Singleplatform
     API_KEY = ENV['API_KEY'].freeze
     CLIENT_ID = ENV['CLIENT_ID'].freeze
     CLIENT_SECRET = ENV['CLIENT_SECRET'].freeze
+
+    include Singleplatform::Client::Locations
+    include Singleplatform::Client::Menus
 
     def initialize
       @host          = HOST
