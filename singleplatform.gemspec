@@ -1,12 +1,31 @@
-Gem::Specification.new do |s|
-  s.name        = 'singleplatform'
-  s.version     = '0.1.0'
-  s.date        = '2016-08-22'
-  s.summary     = "SinglePlatform"
-  s.description = "A Ruby client library for accessing the SinglePlatform API."
-  s.authors     = ["Jeff Gharakhanian"]
-  s.email       = 'jg@okayjeff.com'
-  s.files       = ["lib/singleplatform.rb"]
-  s.homepage    = 'http://rubygems.org/gems/hola'
-  s.license     = 'MIT'
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+# require 'singleplatform/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = "singleplatform"
+  spec.version       = Singleplatform::VERSION
+  spec.authors       = ["Jeff Gharakhanian"]
+  spec.email         = ["jg@okayjeff.com"]
+
+  spec.summary       = "A Ruby client library for accessing the SinglePlatform API."
+  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.license       = "MIT"
+
+  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
+  # to allow pushing to a single host or delete this section to allow pushing to any host.
+  if spec.respond_to?(:metadata)
+    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+  else
+    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
+  end
+
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.bindir        = "exe"
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "bundler", "~> 1.12"
+  spec.add_development_dependency "rake", "~> 10.0"
 end
