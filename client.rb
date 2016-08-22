@@ -5,7 +5,7 @@ require 'openssl'
 require 'cgi'
 require 'json'
 require 'bundler'
-require_relative 'request'
+require_relative 'client/request'
 require_relative 'client/locations'
 require_relative 'client/menus'
 
