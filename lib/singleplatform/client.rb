@@ -16,7 +16,7 @@ module Singleplatform
     # Initializes a new API Client Object
     #
     # @return [Singleplatform::Client]
-    def initialize(args)
+    def initialize(args = {})
       @base_url      = BASE_URL
       @client_id     = args[:client_id]
       @client_secret = args[:client_secret]

@@ -7,7 +7,7 @@ module Singleplatform
     # Alias for Singleplatform::Client.new
     #
     # @return [Singleplatform::Client]
-    def new(args)
+    def new(args = {})
       Singleplatform::Client.new(args)
     end
 
