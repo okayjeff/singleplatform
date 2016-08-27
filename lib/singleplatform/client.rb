@@ -7,8 +7,8 @@ module Singleplatform
   class Client
     BASE_URL      = ENV['BASE_URL'].freeze
     API_KEY       = ENV['API_KEY'].freeze
-    CLIENT_ID     = ENV['CLIENT_ID'].freeze
-    CLIENT_SECRET = ENV['CLIENT_SECRET'].freeze
+    CLIENT_ID     = ENV['CLIENT_ID_TEST'].freeze
+    CLIENT_SECRET = ENV['CLIENT_SECRET_TEST'].freeze
 
     include Singleplatform::Client::Locations
     include Singleplatform::Client::Menus
