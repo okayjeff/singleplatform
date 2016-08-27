@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'webmock/minitest'
 require 'singleplatform'
 
 class SingleplatformTest < Minitest::Test
