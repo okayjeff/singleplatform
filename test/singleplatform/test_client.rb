@@ -3,15 +3,13 @@ require 'singleplatform'
 
 class Singleplatform::ClientTest < Minitest::Test
   def test_urls_generate_correctly
-    class Singleplatform::Client
-      BASE_URL      = 'http://publishing-api.singleplatform.com'.freeze
-      CLIENT_ID     = 'purplespacesuitfrogboots1'.freeze
-      CLIENT_SECRET = 'yellowsubmarinesresonatewithmeandmybestbros'.freeze
-    end
-    skip
+    client = Singleplatform::Client.new(
+      client_id:     'purplespacesuitfrogboots1',
+      client_secret: 'yellowsubmarinesresonatewithmeandmybestbros'
+    )
     path   = '/locations/updated_since/'
-    params = { date: '2016-08-01', limit: 10 }
-    url = generate_url(path, params)
-    
+    params = { date: '2016-08-01', limit: 100 }
+    url = client.generate_url(path, params)
+    assert_equal('http://publishing-api.singleplatform.com/locations/updated_since/?date=2016-08-01&limit=100&client=purplespacesuitfrogboots1&signature=D4mf0vL2jwJKU02OawPlXFXQymg%3D', url)
   end
 end

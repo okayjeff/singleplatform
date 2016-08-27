@@ -5,8 +5,7 @@ require 'singleplatform/client/photos'
 
 module Singleplatform
   class Client
-    BASE_URL      = ENV['BASE_URL'].freeze
-    API_KEY       = ENV['API_KEY'].freeze
+    BASE_URL      = 'http://publishing-api.singleplatform.com'
     CLIENT_ID     = ENV['CLIENT_ID'].freeze
     CLIENT_SECRET = ENV['CLIENT_SECRET'].freeze
 
@@ -17,10 +16,10 @@ module Singleplatform
     # Initializes a new API Client Object
     #
     # @return [Singleplatform::Client]
-    def initialize
+    def initialize(args)
       @base_url      = BASE_URL
-      @client_id     = CLIENT_ID
-      @client_secret = CLIENT_SECRET
+      @client_id     = args[:client_id]
+      @client_secret = args[:client_secret]
     end
 
     # Form the complete URL for a given endpoint
