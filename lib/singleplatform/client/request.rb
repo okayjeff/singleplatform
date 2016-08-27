@@ -10,7 +10,7 @@ module Singleplatform
     def self.get(url)
       tries ||= 3
       response = HTTParty.get(url)
-    rescue Exception => e
+    rescue
       sleep 3
       if tries -= 1 > 0
         retry
