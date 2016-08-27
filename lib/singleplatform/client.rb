@@ -23,8 +23,6 @@ module Singleplatform
       @client_secret = CLIENT_SECRET
     end
 
-    private
-
     # Form the complete URL for a given endpoint
     # @note Signature must be the last parameter
     #
