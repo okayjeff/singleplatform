@@ -2,6 +2,8 @@ require 'singleplatform/client/request'
 require 'singleplatform/client/locations'
 require 'singleplatform/client/menus'
 require 'singleplatform/client/photos'
+require 'cgi'
+require 'uri'
 
 module Singleplatform
   class Client
@@ -34,7 +36,7 @@ module Singleplatform
     # @param params [Hash]
     # @return [String]
     def generate_url(path, params = {})
-      path.gsub!(@base_url, '')
+      # path = form_path_from_url(path)
       params['client'] = @client_id
       signature_base_string = "#{path}?#{URI.encode_www_form(params)}"
       "#{@base_url}#{signature_base_string}&signature=#{generate_signature(signature_base_string)}"
@@ -49,6 +51,14 @@ module Singleplatform
       CGI::escape(Base64.encode64(key).chomp)
     end
 
-    def form_path_from_url(url); end
+    # def form_path_from_url(url)
+    #   base_url = escape(@base_url)
+    #   path = url.gsub(base_url, '')
+    #   params = url.gsub(/#{path}[?]/, '')
+    #   CGI::parse(params)
+    #   arr = {}
+    #   arr['path'] << path
+    #   arr['params'] << params
+    # end
   end
 end
