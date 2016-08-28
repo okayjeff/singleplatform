@@ -25,10 +25,16 @@ module Singleplatform
     # Form the complete URL for a given endpoint
     # @note Signature must be the last parameter
     #
+    # @note For convenience, @param path can also be a complete URL,
+    # which enables you to call generate_url(response.next) when
+    # paginating through updated_since results. See 
+    # Client#form_path_from_url.
+    #
     # @param path [String]
     # @param params [Hash]
     # @return [String]
     def generate_url(path, params = {})
+      path.gsub!(@base_url, '')
       params['client'] = @client_id
       signature_base_string = "#{path}?#{URI.encode_www_form(params)}"
       "#{@base_url}#{signature_base_string}&signature=#{generate_signature(signature_base_string)}"
@@ -42,5 +48,7 @@ module Singleplatform
       key = OpenSSL::HMAC.digest('sha1', @client_secret, base_string)
       CGI::escape(Base64.encode64(key).chomp)
     end
+
+    def form_path_from_url(url); end
   end
 end
