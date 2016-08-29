@@ -2,14 +2,20 @@
 This is a wrapper for accessing SinglePlatform's API. Please see {SinglePlatform's official API documentation}[http://docs.singleplatform.com/spv3/] for information on obtaining API credentials.
 
 ## Installation
-```gem install singleplatform```
+```
+gem install singleplatform
+```
 
 Or add this to your applications Gemfile:
-```gem 'singleplatform'```
+```
+gem 'singleplatform'
+```
 
 And then run:
 
-```bundle install```
+```
+bundle install
+```
 
 ## Usage
 ### Initializing an API Client
