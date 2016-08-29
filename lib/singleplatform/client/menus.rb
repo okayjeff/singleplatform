@@ -4,7 +4,8 @@ module Singleplatform
       # Fetch all menus for a given location
       #
       # @param id [String]
-      # @param options [Hash] :format Short menu ('short') available
+      # @param options [Hash]
+      # @option options [String] :format Short menu available ('short')
       # @return [Hash]
       def menus_for(id, options = {})
         url = generate_url("/locations/#{id}/menus", options)
