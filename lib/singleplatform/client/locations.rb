@@ -17,7 +17,7 @@ module Singleplatform
       # @param date [String]
       # @param options [Hash]
       # @option options [Fixnum] :limit Maximum (default) 5000 per page
-      # @return [Hash::Mash]
+      # @return [Hashie::Mash]
       def locations_updated_since(date, options = {})
         url = generate_url(
           '/locations/updated_since/',

@@ -6,7 +6,7 @@ module Singleplatform
       # @param id [String]
       # @param options [Hash]
       # @option options [String] :format Short menu available ('short')
-      # @return [Hash]
+      # @return [Hashie::Mash]
       def menus_for(id, options = {})
         url = generate_url("/locations/#{id}/menus", options)
         Request.get(url)
