@@ -6,7 +6,7 @@ module Singleplatform
     # Make an HTTP get request to given URL
     #
     # @param url [String]
-    # @return [Hash]
+    # @return [Hashie::Mash]
     def self.get(url)
       tries ||= 3
       response = HTTParty.get(url)
