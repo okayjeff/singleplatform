@@ -1,5 +1,5 @@
 # SinglePlatform API Ruby Client
-This is a wrapper for accessing SinglePlatform's API. Please see [SinglePlatform's official API documentation](http://docs.singleplatform.com/spv3/) for information on obtaining API credentials.
+This is a wrapper for accessing SinglePlatform's API. Please see {SinglePlatform's official API documentation}[http://docs.singleplatform.com/spv3/] for information on obtaining API credentials.
 
 ## Installation
 ```gem install singleplatform```
