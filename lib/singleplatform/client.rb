@@ -7,6 +7,8 @@ require 'uri'
 
 module Singleplatform
   class Client
+    attr_accessor :base_url, :client_id, :client_secret
+
     BASE_URL      = 'http://publishing-api.singleplatform.com'
     CLIENT_ID     = ENV['CLIENT_ID'].freeze
     CLIENT_SECRET = ENV['CLIENT_SECRET'].freeze
@@ -34,7 +36,7 @@ module Singleplatform
     def generate_url(path, params = {})
       params['client'] = @client_id
       signature_base_string = "#{path}?#{URI.encode_www_form(params)}"
-      "#{@base_url}#{signature_base_string}&signature=#{generate_signature(signature_base_string)}"
+      "#{base_url}#{signature_base_string}&signature=#{generate_signature(signature_base_string)}"
     end
 
     # Calculate the signature, Base64 and URL encode it
@@ -42,7 +44,7 @@ module Singleplatform
     # @param base_string [String]
     # @return [String]
     def generate_signature(base_string)
-      key = OpenSSL::HMAC.digest('sha1', @client_secret, base_string)
+      key = OpenSSL::HMAC.digest('sha1', client_secret, base_string)
       CGI::escape(Base64.encode64(key).chomp)
     end
   end
