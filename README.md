@@ -68,7 +68,7 @@ SinglePlatform locations have menus or lists of products and services that you c
 
 ```ruby
 menus = client.menus_for('nobu') # => #<Array ... >
-menus.first.name                 # "Dinner Menu"
+menus.first.name                 # => "Dinner Menu"
 ```
 
 See SinglePlatform's API documentation for the Menu schema with a full list of attributes.
@@ -78,7 +78,7 @@ Many SinglePlatform locations have photos, both at the business and menu-item le
 
 ```ruby
 photos = client.photos_for('no') # => #<Array ... >
-photos.first.type                # "Product"
-photos.first.url                 # "http://xyz.cloudfront.net/.../39bf7671bc7d006f4cef72d94eee24aeec7615d2.jpg"
+photos.first.type                # => "Product"
+photos.first.url                 # => "http://xyz.cloudfront.net/.../39bf7671bc7d006f4cef72d94eee24aeec7615d2.jpg"
 ```
 
