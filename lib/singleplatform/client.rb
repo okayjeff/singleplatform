@@ -1,4 +1,5 @@
-require 'singleplatform/client/request'
+require 'singleplatform/request'
+require 'singleplatform/response'
 require 'singleplatform/client/locations'
 require 'singleplatform/client/menus'
 require 'singleplatform/client/photos'
