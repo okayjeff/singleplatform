@@ -9,7 +9,7 @@ module Singleplatform
     end
 
     def next
-
+      
     end
   end
 end
