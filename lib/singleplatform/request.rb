@@ -10,7 +10,6 @@ module Singleplatform
     def self.get(url)
       tries ||= 3
       response = HTTParty.get(url)
-      puts "Status: #{response.code}"
     rescue
       sleep 3
       if tries -= 1 > 0
@@ -18,7 +17,10 @@ module Singleplatform
       end
       nil
     else
-      Hashie::Mash.new(JSON.parse(response.body)).data
+      Singleplatform::Client::Response.new(
+        code: response.code,
+        body: Hashie::Mash.new(JSON.parse(response.body)).data
+      )
     end
   end
 end
