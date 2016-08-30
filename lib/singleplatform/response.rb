@@ -13,7 +13,7 @@ module Singleplatform
     def next
       return nil if next_page.nil?
       path = parse_params(next_page)
-      puts "Stripped base url: " + path
+      puts "Stripped base url: #{path}" 
       path << "&client=#{ENV['CLIENT_ID']}"
     end
 
