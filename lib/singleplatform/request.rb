@@ -17,7 +17,7 @@ module Singleplatform
       end
       nil
     else
-      Singleplatform::Client::Response.new(
+      Response.new(
         code: response.code,
         body: Hashie::Mash.new(JSON.parse(response.body)).data
       )
