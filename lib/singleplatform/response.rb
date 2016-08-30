@@ -1,3 +1,5 @@
+require 'cgi'
+
 module Singleplatform
   class Response
     attr_accessor :code, :body, :next_page
@@ -12,7 +14,7 @@ module Singleplatform
       return nil if next_page.nil?
       path = strip_base_url(next_page)
       path << "&client=#{ENV['CLIENT_ID']}"
-      
+      puts CGI::parse(path)
     end
 
     def strip_base_url(url)
