@@ -35,7 +35,7 @@ module Singleplatform
     # @param params [Hash]
     # @return [String]
     def generate_url(path, params = {})
-      params['client'] = client_id
+      params['client'] ||= client_id
       signature_base_string = "#{path}?#{URI.encode_www_form(params)}"
       "#{base_url}#{signature_base_string}&signature=#{generate_signature(signature_base_string)}"
     end

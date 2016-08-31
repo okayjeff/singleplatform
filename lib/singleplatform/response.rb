@@ -12,13 +12,18 @@ module Singleplatform
 
     def next
       return nil if next_page.nil?
-      path = parse_params(next_page)
-      puts "Stripped base url: #{path}" 
-      path << "&client=#{ENV['CLIENT_ID']}"
+      params = parse_params(next_page)
+      params['client'] ||= ENV['CLIENT_ID']
+      
     end
 
     def parse_params(url)
-      CGI::parse(url.slice!(/[?].+/))
+      CGI::parse(url.split('?')[-1])
+    end
+
+    def parse_path(url)
+      base_url = 'http://publishing-api.singleplatform.com'
+      # CGI::parse(url.split('?')[0]).slice('')
     end
   end
 end
