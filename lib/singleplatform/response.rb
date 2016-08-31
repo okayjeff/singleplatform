@@ -22,8 +22,8 @@ module Singleplatform
     end
 
     def parse_path(url)
-      base_url = 'http://publishing-api.singleplatform.com'
-      # CGI::parse(url.split('?')[0]).slice('')
+      # base_url = 'http://publishing-api.singleplatform.com'
+      url.slice(/[?].+/)
     end
   end
 end
