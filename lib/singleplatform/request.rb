@@ -17,7 +17,8 @@ module Singleplatform
       end
       nil
     else
-      raise Singleplatform::Error.new(
+      raise(
+        Singleplatform::Error,
         "#{response.code}: #{response['errorMessage']}"
       ) if response.code != 200
       Response.new(
