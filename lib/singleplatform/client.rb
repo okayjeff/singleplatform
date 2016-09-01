@@ -27,8 +27,6 @@ module Singleplatform
       raise Error::MissingCredentialsError if credentials_missing?
     end
 
-    private
-
     # Form the complete URL for a given endpoint
     # 
     # @note Signature must be the last parameter
