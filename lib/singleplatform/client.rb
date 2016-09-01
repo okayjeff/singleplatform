@@ -11,8 +11,6 @@ module Singleplatform
     attr_accessor :base_url, :client_id, :client_secret
 
     BASE_URL      = 'http://publishing-api.singleplatform.com'
-    CLIENT_ID     = ENV['CLIENT_ID'].freeze
-    CLIENT_SECRET = ENV['CLIENT_SECRET'].freeze
 
     include Singleplatform::Client::Locations
     include Singleplatform::Client::Menus
@@ -27,6 +25,8 @@ module Singleplatform
       @client_secret = args[:client_secret]
     end
 
+    private
+
     # Form the complete URL for a given endpoint
     # 
     # @note Signature must be the last parameter
@@ -35,7 +35,7 @@ module Singleplatform
     # @param params [Hash]
     # @return [String]
     def generate_url(path, params = {})
-      params['client'] = client_id
+      params['client'] ||= client_id
       signature_base_string = "#{path}?#{URI.encode_www_form(params)}"
       "#{base_url}#{signature_base_string}&signature=#{generate_signature(signature_base_string)}"
     end
