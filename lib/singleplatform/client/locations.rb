@@ -14,6 +14,7 @@ module Singleplatform
 
       # Fetch location, menus and photo data for a specific location
       #
+      # @param id [String]
       # @return [Singleplatform::Response]
       def all_for(id)
         url = generate_url("/locations/#{id}/all")
