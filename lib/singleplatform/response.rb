@@ -24,7 +24,7 @@ module Singleplatform
         client_id:     ENV['CLIENT_ID'],
         client_secret: ENV['CLIENT_SECRET']
       )
-      new_page = client.locations_updated_since(params)
+      new_page = client.locations_updated_since(params.delete('date'), params)
       refresh(new_page)
     end
 
