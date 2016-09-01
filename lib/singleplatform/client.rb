@@ -1,5 +1,6 @@
 require 'singleplatform/request'
 require 'singleplatform/response'
+require 'singleplatform/error'
 require 'singleplatform/client/locations'
 require 'singleplatform/client/menus'
 require 'singleplatform/client/photos'
@@ -23,9 +24,8 @@ module Singleplatform
       @base_url      = BASE_URL
       @client_id     = args[:client_id]
       @client_secret = args[:client_secret]
+      raise Error::MissingCredentialsError if credentials_missing?
     end
-
-    private
 
     # Form the complete URL for a given endpoint
     # 
@@ -47,6 +47,14 @@ module Singleplatform
     def generate_signature(base_string)
       key = OpenSSL::HMAC.digest('sha1', client_secret, base_string)
       CGI::escape(Base64.encode64(key).chomp)
+    end
+
+    # Helper method to determine if credentials are missing and, if
+    #   so, raise Error::MissingCredentials
+    #
+    # @return [Boolean]
+    def credentials_missing?
+      client_id.nil? || client_secret.nil?
     end
   end
 end

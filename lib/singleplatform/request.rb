@@ -6,7 +6,7 @@ module Singleplatform
     # Make an HTTP get request to given URL
     #
     # @param url [String]
-    # @return [Hashie::Mash]
+    # @return [Singleplatform::Response]
     def self.get(url)
       tries ||= 3
       response = HTTParty.get(url)
@@ -15,12 +15,27 @@ module Singleplatform
       if tries -= 1 > 0
         retry
       end
-      nil
+      raise(
+        Error::RequestError,
+        "Unable to transmit request to SinglePlatform. Try again later or contact technical support."
+      )
     else
+      raise(
+        Error::ApiError,
+        "#{response.code}: #{response['errorMessage']}"
+      ) if response.code != 200
       Response.new(
         code: response.code,
-        body: Hashie::Mash.new(JSON.parse(response.body)).data
+        body: self.parse_response_body(response.body)
       )
+    end
+
+    # Transform API JSON response to Hashie::Mash pseudo object
+    #
+    # @return [Hashie::Mash]
+    def self.parse_response_body(body)
+      return body unless JSON.parse(body)
+      Hashie::Mash.new(JSON.parse(body)).data
     end
   end
 end
