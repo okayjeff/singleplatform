@@ -8,6 +8,12 @@ module Singleplatform
       # @option options [String] :format Short menu ('short') available
       # @return [Singleplatform::Response]
       def location(id, options = {})
+      rescue ArgumentError
+        raise(
+          Singleplatform::Error,
+          "ID is required"
+        )
+      else
         url = generate_url("/locations/#{id}/", options)
         Request.get(url)
       end
