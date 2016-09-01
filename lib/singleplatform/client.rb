@@ -52,7 +52,7 @@ module Singleplatform
     end
 
     # Helper method to determine if credentials are missing and, if
-    #  so, raise Error::MissingCredentials
+    #   so, raise Error::MissingCredentials
     #
     # @return [Boolean]
     def credentials_missing?
