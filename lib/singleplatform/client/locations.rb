@@ -28,6 +28,10 @@ module Singleplatform
       # @option options [Fixnum] :limit Maximum (default) 5000 per page
       # @return [Singleplatform::Response]
       def locations_updated_since(options)
+        raise(
+          Error::MissingParameters,
+          "Your request must contain a date parameter (e.g. date: '2016-09-01')"
+        ) if options['date'].nil?
         url = generate_url('/locations/updated_since/', options)
         Request.get(url)
       end

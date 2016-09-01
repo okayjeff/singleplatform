@@ -18,7 +18,7 @@ module Singleplatform
       nil
     else
       raise(
-        Singleplatform::Error,
+        Error::ApiError,
         "#{response.code}: #{response['errorMessage']}"
       ) if response.code != 200
       Response.new(
