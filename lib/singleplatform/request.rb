@@ -6,7 +6,7 @@ module Singleplatform
     # Make an HTTP get request to given URL
     #
     # @param url [String]
-    # @return [Hashie::Mash]
+    # @return [Singleplatform::Response]
     def self.get(url)
       tries ||= 3
       response = HTTParty.get(url)
@@ -17,13 +17,18 @@ module Singleplatform
       end
       nil
     else
-      raise Singleplatform::Error.new(response.errorMessage) if response.code != 200
+      raise Singleplatform::Error.new(
+        "#{response.code}: #{response['errorMessage']}"
+      ) if response.code != 200
       Response.new(
         code: response.code,
         body: self.parse_response_body(response.body)
       )
     end
 
+    # Transform API JSON response to Hashie::Mash pseudo object
+    #
+    # @return [Hashie::Mash]
     def self.parse_response_body(body)
       return body unless JSON.parse(body)
       Hashie::Mash.new(JSON.parse(body)).data
