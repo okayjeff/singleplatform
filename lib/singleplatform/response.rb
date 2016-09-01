@@ -30,6 +30,10 @@ module Singleplatform
 
     private
 
+    # Update Response instance variables
+    #
+    # @param [Singleplatform::Response]
+    # @return [Singleplatform::Response]
     def refresh(response)
       @code      = response.code
       @body      = response.body
@@ -37,10 +41,17 @@ module Singleplatform
       response
     end
 
+    # Take any given URL and parse its query params.
+    #
+    # @param url [String]
+    # @return [Hash]
     def parse_params(url)
       CGI::parse(url.split('?')[-1])
     end
 
+    # Include additional params required for accessing API
+    #
+    # @return [Hash]
     def prepare_params(url)
       params = parse_params(url)
       params['client'] = ENV['CLIENT_ID']

@@ -11,8 +11,6 @@ module Singleplatform
     attr_accessor :base_url, :client_id, :client_secret
 
     BASE_URL      = 'http://publishing-api.singleplatform.com'
-    CLIENT_ID     = ENV['CLIENT_ID'].freeze
-    CLIENT_SECRET = ENV['CLIENT_SECRET'].freeze
 
     include Singleplatform::Client::Locations
     include Singleplatform::Client::Menus
@@ -26,6 +24,8 @@ module Singleplatform
       @client_id     = args[:client_id]
       @client_secret = args[:client_secret]
     end
+
+    private
 
     # Form the complete URL for a given endpoint
     # 
