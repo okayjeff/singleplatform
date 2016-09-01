@@ -19,8 +19,13 @@ module Singleplatform
     else
       Response.new(
         code: response.code,
-        body: Hashie::Mash.new(JSON.parse(response.body)).data
+        body: parse_response_body(response.body)
       )
+    end
+
+    def parse_response_body(body)
+      return body unless JSON.parse(body)
+      Hashie::Mash.new(JSON.parse(response.body)).data
     end
   end
 end
