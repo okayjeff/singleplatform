@@ -14,16 +14,15 @@ module Singleplatform
       return nil if next_page.nil?
       params = parse_params(next_page)
       params['client'] ||= ENV['CLIENT_ID']
-      
+      client = Singleplatform.new(
+        client_id:     ENV['CLIENT_ID'],
+        client_secret: ENV['CLIENT_SECRET']
+      )
+      client.locations_updated_since(params)
     end
 
     def parse_params(url)
       CGI::parse(url.split('?')[-1])
-    end
-
-    def parse_path(url)
-      # base_url = 'http://publishing-api.singleplatform.com'
-      url.slice(/[?].+/)
     end
   end
 end
