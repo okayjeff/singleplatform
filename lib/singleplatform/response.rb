@@ -19,17 +19,32 @@ module Singleplatform
     # @return [Hashie::Mash]
     def next
       return nil if next_page.nil?
-      params = parse_params(next_page)
-      params['client'] = ENV['CLIENT_ID']
-      client ||= Singleplatform.new(
+      params = prepare_params(next_page)
+      client = Singleplatform.new(
         client_id:     ENV['CLIENT_ID'],
         client_secret: ENV['CLIENT_SECRET']
       )
-      client.locations_updated_since(params)
+      new_page = client.locations_updated_since(params)
+      refresh(new_page)
+    end
+
+    private
+
+    def refresh(response)
+      @code      = response.code
+      @body      = response.body
+      @next_page = response.next_page
+      response
     end
 
     def parse_params(url)
       CGI::parse(url.split('?')[-1])
+    end
+
+    def prepare_params(url)
+      params = parse_params(url)
+      params['client'] = ENV['CLIENT_ID']
+      params
     end
   end
 end
