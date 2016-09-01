@@ -19,11 +19,7 @@ module Singleplatform
       # @option options [Fixnum] :limit Maximum (default) 5000 per page
       # @return [Hashie::Mash]
       def locations_updated_since(options = {})
-        url = generate_url(
-          '/locations/updated_since/',
-          # { date: options['date'] }.merge(options)
-          options
-        )
+        url = generate_url('/locations/updated_since/', options)
         Request.get(url)
       end
     end
