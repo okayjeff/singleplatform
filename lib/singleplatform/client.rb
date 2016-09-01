@@ -24,7 +24,7 @@ module Singleplatform
       @base_url      = BASE_URL
       @client_id     = args[:client_id]
       @client_secret = args[:client_secret]
-      raise Error::MissingCredentials if credentials_missing?
+      raise Error::MissingCredentialsError if credentials_missing?
     end
 
     private

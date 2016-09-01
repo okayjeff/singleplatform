@@ -6,7 +6,7 @@ module Singleplatform
       end
     end
 
-    class MissingCredentials < Base
+    class MissingCredentialsError < Base
       def initialize(msg = "You must initialize a client with ID and Secret.")
         super
       end
@@ -18,7 +18,7 @@ module Singleplatform
       end
     end
 
-    class MissingParameters < Base
+    class MissingParametersError < Base
       def initialize(msg = "Your request is missing required parameters.")
         super
       end
