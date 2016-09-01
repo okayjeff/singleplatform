@@ -17,15 +17,16 @@ module Singleplatform
       end
       nil
     else
+      raise Singleplatform::Error.new(response.errorMessage) if response.code != 200
       Response.new(
         code: response.code,
-        body: parse_response_body(response.body)
+        body: self.parse_response_body(response.body)
       )
     end
 
-    def parse_response_body(body)
+    def self.parse_response_body(body)
       return body unless JSON.parse(body)
-      Hashie::Mash.new(JSON.parse(response.body)).data
+      Hashie::Mash.new(JSON.parse(body)).data
     end
   end
 end
