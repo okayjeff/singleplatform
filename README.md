@@ -46,6 +46,7 @@ This will return a ```Singleplatform::Response``` object. Access the response bo
 
 ```ruby
 response = client.location('nobu')   # => #<Singleplatform::Response ... >
+response.code                        # => 200
 response.body                        # => #<Hashie::Mash ... >
 response.body.name                   # => "Nobu"
 response.body.attributes             # => #<Hashie::Mash ... >
