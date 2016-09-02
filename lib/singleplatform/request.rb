@@ -27,6 +27,8 @@ module Singleplatform
       Response.new(
         code:   response.code,
         body:   self.parse_response_body(response.body),
+        # Pass the calling method to the Response object so it knows which
+        # method to call when API results are iterable
         origin: caller_locations(1,1)[0].label
       )
     end
