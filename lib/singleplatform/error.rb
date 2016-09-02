@@ -23,5 +23,17 @@ module Singleplatform
         super
       end
     end
+
+    class InvalidParametersError < Base
+      def initialize(msg = "Your request is missing required parameters.")
+        super
+      end
+    end
+
+    class InvalidDateError < InvalidParametersError
+      def initialize(msg = "Your request must supply a valid date.")
+        super
+      end
+    end
   end
 end
