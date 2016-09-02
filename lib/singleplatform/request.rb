@@ -25,8 +25,9 @@ module Singleplatform
         "#{response.code}: #{response['errorMessage']}"
       ) if response.code != 200
       Response.new(
-        code: response.code,
-        body: self.parse_response_body(response.body)
+        code:   response.code,
+        body:   self.parse_response_body(response.body),
+        origin: caller_locations(1,1)[0].label
       )
     end
 
