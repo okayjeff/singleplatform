@@ -11,8 +11,6 @@ describe 'Singleplatform::Client::Locations' do
     @client = Singleplatform::Client.new(@creds)
     @location = File.open(Dir.pwd + '/spec/support/fixtures/location.json').read
     @updated_since = File.open(Dir.pwd + '/spec/support/fixtures/updated_since.json').read
-    @menus = File.open(Dir.pwd + '/spec/support/fixtures/menus.json').read
-    @photos = File.open(Dir.pwd + '/spec/support/fixtures/photos.json').read
   end
 
   describe ".location" do
@@ -56,38 +54,6 @@ describe 'Singleplatform::Client::Locations' do
       it "raises an ArgumentError" do 
         expect { @client.locations_updated_since }.to raise_error(ArgumentError
           )
-      end
-    end
-  end
-
-  describe ".menus_for" do
-    context "when given a valid location id" do
-      it "returns menu data for that location" do
-        stub_request(:get, /publishing-api.singleplatform.com/).
-          with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
-          to_return(status: 200, body: @menus)
-        response = @client.menus_for('island-prime')
-        expect(response).to be_a(Singleplatform::Response)
-        expect(response.body.size).to eql(2)
-      end
-    end
-
-    context "when missing a location id" do
-      it "raises an ArgumentError" do
-        expect { @client.menus_for }.to raise_error(ArgumentError) 
-      end
-    end
-  end
-
-  describe ".photos_for" do
-    context "when given a valid location id" do
-      it "returns photos for that location" do
-        stub_request(:get, /publishing-api.singleplatform.com/).
-          with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
-          to_return(status: 200, body: @photos)
-          response = @client.photos_for('island-prime')
-          expect(response).to be_a(Singleplatform::Response)
-          expect(response.body.first.title).to eql('Key Lime Pie')
       end
     end
   end
