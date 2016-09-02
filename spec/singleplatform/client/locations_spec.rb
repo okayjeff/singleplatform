@@ -65,4 +65,5 @@ describe 'Singleplatform::Client::Locations' do
       end
     end
   end
+  
 end

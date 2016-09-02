@@ -23,6 +23,7 @@ describe Singleplatform::Client::Photos do
           expect(response.body.first.title).to eql('Key Lime Pie')
       end
     end
+    
     context "when missing a location id" do
       it "raises an ArgumentError" do
         expect { @client.photos_for }.to raise_error(ArgumentError)
