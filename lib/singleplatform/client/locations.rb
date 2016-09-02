@@ -6,6 +6,7 @@ module Singleplatform
       # @param id [String]
       # @return [Singleplatform::Response]
       def location(id)
+        raise Error::InvalidLocationError if params_invalid?(id)
         url = generate_url("/locations/#{id}/")
         Request.get(url)
       end
@@ -15,6 +16,7 @@ module Singleplatform
       # @param id [String]
       # @return [Singleplatform::Response]
       def all_for(id)
+        raise Error::InvalidLocationError if params_invalid?(id)
         url = generate_url("/locations/#{id}/all")
         Request.get(url)
       end
@@ -26,7 +28,7 @@ module Singleplatform
       # @option options [Fixnum] :limit Maximum (default) 5000 per page
       # @return [Singleplatform::Response]
       def locations_updated_since(date, options = {})
-        raise Error::InvalidDateError if params_blank?(date)
+        raise Error::InvalidDateError if params_invalid?(date)
         url = generate_url(
           '/locations/updated_since/',
           { date: date }.merge(options)

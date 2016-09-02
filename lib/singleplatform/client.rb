@@ -57,7 +57,11 @@ module Singleplatform
       client_id.nil? || client_secret.nil?
     end
 
-    def params_blank?(*args)
+    # Helper method to determine if any number of params are nil,
+    #   empty or just spaces.
+    #
+    # @return [Boolean]
+    def params_invalid?(*args)
       args.map { |a| return true if a.nil? || a.to_s.gsub(/\s/, '').empty? }
       false
     end
