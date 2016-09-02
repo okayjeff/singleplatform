@@ -61,9 +61,20 @@ module Singleplatform
     #   empty or just spaces.
     #
     # @return [Boolean]
-    def params_invalid?(*args)
-      args.map { |a| return true if a.nil? || a.to_s.gsub(/\s/, '').empty? }
-      false
+    def valid_params?(*args)
+      args.map { |a| return false if a.nil? || a.to_s.gsub(/\s/, '').empty? }
+      true
+    end
+
+    # Helper method to determine if a date is valid
+    #
+    # @return [Boolean]
+    def valid_date?(date)
+      d = date.split('-')
+      d.map! { |d| d.to_i }
+      Date.valid_date?(d[0], d[1], d[2])
+    rescue TypeError
+      return false
     end
   end
 end

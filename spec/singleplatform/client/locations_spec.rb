@@ -1,5 +1,6 @@
 require 'singleplatform'
 require 'webmock/rspec'
+require 'spec_helper'
 
 describe 'Singleplatform::Client::Locations' do
 
@@ -61,6 +62,16 @@ describe 'Singleplatform::Client::Locations' do
       it "raises an ArgumentError" do 
         expect { @client.locations_updated_since }.to raise_error(ArgumentError
           )
+      end
+    end
+
+    context "when given an invalid date" do
+      it "raises an InvalidDateError" do
+        expect { @client.locations_updated_since(' ') }.to raise_error(Singleplatform::Error::InvalidDateError)
+        expect { @client.locations_updated_since('2016') }.to raise_error(Singleplatform::Error::InvalidDateError)
+        expect { @client.locations_updated_since('2016-9') }.to raise_error(Singleplatform::Error::InvalidDateError)
+        expect { @client.locations_updated_since('2016-9-') }.to raise_error(Singleplatform::Error::InvalidDateError)
+        expect { @client.locations_updated_since('2016-9-31') }.to raise_error(Singleplatform::Error::InvalidDateError)
       end
     end
   end

@@ -10,7 +10,7 @@ module Singleplatform
       # @option options [String] :type (interior, exterior, item, logo, uncategorized)
       # @return [Hashie::Mash]
       def photos_for(id, options = {})
-        raise Error::InvalidLocationError if params_invalid?(id)
+        raise Error::InvalidLocationError unless valid_params?(id)
         url = generate_url("/location/#{id}/photos", options)
         Request.get(url)
       end
@@ -22,7 +22,7 @@ module Singleplatform
       # @option options [Fixnum] :limit Maximum (default) 5000 per page
       # @return [Hashie::Mash]
       def photos_updated_since(date, options = {})
-        raise Error::InvalidDateError if params_invalid?(date)
+        raise Error::InvalidDateError unless valid_params?(date)
         url = generate_url(
           '/photos/updated_since/',
           { date: date }.merge(options)
