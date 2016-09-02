@@ -7,7 +7,7 @@ module Singleplatform
     def initialize(args)
       @code      = args[:code]
       @body      = args[:body]
-      @next_page = args[:body].next
+      @next_page = args[:body].respond_to?(:next) ? args[:body].next : nil
     end
 
     # An iterator for retrieving the next page of results from

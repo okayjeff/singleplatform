@@ -67,7 +67,7 @@ describe 'Singleplatform::Client::Locations' do
           to_return(status: 200, body: @menus)
         response = @client.menus_for('island-prime')
         expect(response).to be_a(Singleplatform::Response)
-        expect(response.body.results.size).to eql(2)
+        expect(response.body.size).to eql(2)
       end
     end
   end
