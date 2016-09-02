@@ -95,5 +95,5 @@ Similarly to ```locations_updated_since```, calling ```photos_updated_since``` r
 
 ````ruby
 response = client.photos_updated_since('2016-09-01')  # => #<Singleplatform::Response ... >
-response
+response.next
 ````
