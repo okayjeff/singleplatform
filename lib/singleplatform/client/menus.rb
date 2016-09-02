@@ -8,6 +8,7 @@ module Singleplatform
       # @option options [String] :format Short menu available ('short')
       # @return [Hashie::Mash]
       def menus_for(id, options = {})
+        raise Error::InvalidLocationError unless valid_params?(id)
         url = generate_url("/locations/#{id}/menus", options)
         Request.get(url)
       end    

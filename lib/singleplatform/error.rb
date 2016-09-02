@@ -23,5 +23,17 @@ module Singleplatform
         super
       end
     end
+
+    class InvalidLocationError < Base
+      def initialize(msg = "Your request must supply a valid location.")
+        super
+      end
+    end
+
+    class InvalidDateError < Base
+      def initialize(msg = "Your request must supply a valid date.")
+        super
+      end
+    end
   end
 end

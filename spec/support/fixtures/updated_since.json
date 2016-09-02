@@ -1,0 +1,233 @@
+{
+   "code" : 200,
+   "data" : {
+      "results" : [
+         {
+            "hours" : {
+               "wednesday" : [
+                  {
+                     "opening" : "09:00am",
+                     "description" : "",
+                     "closing" : "06:00pm"
+                  }
+               ],
+               "thursday" : [
+                  {
+                     "closing" : "05:00pm",
+                     "description" : "",
+                     "opening" : "09:00am"
+                  }
+               ],
+               "saturday" : [
+                  {
+                     "description" : "",
+                     "closing" : "closed",
+                     "opening" : "closed"
+                  }
+               ],
+               "monday" : [
+                  {
+                     "opening" : "09:00am",
+                     "closing" : "05:00pm",
+                     "description" : ""
+                  }
+               ],
+               "sunday" : [
+                  {
+                     "closing" : "closed",
+                     "description" : "",
+                     "opening" : "closed"
+                  }
+               ],
+               "friday" : [
+                  {
+                     "opening" : "09:00am",
+                     "description" : "",
+                     "closing" : "05:00pm"
+                  }
+               ],
+               "tuesday" : [
+                  {
+                     "description" : "",
+                     "closing" : "05:00pm",
+                     "opening" : "09:00am"
+                  }
+               ],
+               "holiday_schedule" : [
+                  "Closed Christmas Day\r\nClosed New Year's Day\r\nClosed on Labor Day\r\nClosed on Memorial Day\r\nClosed on Thanksgiving and the day following Thanksgiving"
+               ]
+            },
+            "is_published" : true,
+            "published_at" : "2013-09-06 12:13:47.408897",
+            "foreign_ids" : {
+               "yelp" : "fw71vSEdGCehdB61CwgqhA",
+               "salesforce-real" : "a0Cd000000BNh42EAD",
+               "foursquare" : "4d572d68cff7721ed570bff5"
+            },
+            "time_zone" : "PST",
+            "updated" : "2012-04-23T17:23:46.000000Z-0400",
+            "name" : "GT Recording",
+            "business_type" : "Business & Professional Services",
+            "created" : "2012-04-06T10:36:00.000000Z-0400",
+            "hasPhotos" : false,
+            "description" : "Blah",
+            "attributes" : {
+               "wheelchair_access" : "",
+               "average_price" : "None"
+            },
+            "out_of_business" : false,
+            "is_owner_verified" : true,
+            "phone" : "",
+            "location_id" : "gt-recording",
+            "website" : "http://gtrecording.com/",
+            "has_photos" : true,
+            "location" : {
+               "country" : "US",
+               "longitude" : -122.34453,
+               "postal_code" : "98103",
+               "latitude" : 47.70107,
+               "address1" : "9921 Aurora Ave N",
+               "cross_street" : "",
+               "city" : "Seattle",
+               "state" : "WA",
+               "directions" : "",
+               "address2" : "",
+               "neighborhood" : "Greenwood, Oaktree"
+            },
+            "email" : ""
+         },
+         {
+            "attributes" : {
+               "wheelchair_access" : true,
+               "average_price" : "2000"
+            },
+            "out_of_business" : false,
+            "hasPhotos" : false,
+            "description" : "",
+            "location_id" : "robbins-law-office",
+            "is_owner_verified" : true,
+            "phone" : "",
+            "has_photos" : true,
+            "website" : "http://lawyerinpuyallup.com/",
+            "email" : "cmrobbins@qwest.net",
+            "location" : {
+               "longitude" : -122.29293,
+               "country" : "US",
+               "latitude" : 47.19297,
+               "postal_code" : "98372",
+               "address1" : "122 E Stewart Ave",
+               "cross_street" : "",
+               "city" : "Puyallup",
+               "state" : "WA",
+               "directions" : "",
+               "neighborhood" : "",
+               "address2" : ""
+            },
+            "hours" : {
+               "thursday" : [
+                  {
+                     "opening" : "09:00am",
+                     "closing" : "06:00pm",
+                     "description" : ""
+                  }
+               ],
+               "tuesday" : [
+                  {
+                     "opening" : "09:00am",
+                     "closing" : "06:00pm",
+                     "description" : ""
+                  }
+               ],
+               "friday" : [
+                  {
+                     "closing" : "06:00pm",
+                     "description" : "",
+                     "opening" : "09:00am"
+                  }
+               ],
+               "saturday" : [
+                  {
+                     "closing" : "closed",
+                     "description" : "",
+                     "opening" : "closed"
+                  }
+               ],
+               "monday" : [
+                  {
+                     "description" : "",
+                     "closing" : "06:00pm",
+                     "opening" : "09:00am"
+                  }
+               ],
+               "wednesday" : [
+                  {
+                     "description" : "",
+                     "closing" : "06:00pm",
+                     "opening" : "09:00am"
+                  }
+               ],
+               "sunday" : [
+                  {
+                     "description" : "",
+                     "closing" : "closed",
+                     "opening" : "closed"
+                  }
+               ]
+            },
+            "foreign_ids" : {
+               "foursquare" : "4f96b5257b0c59c3dcd9c842",
+               "salesforce-real" : "a0Cd000000BNgHKEA1",
+               "yelp" : "zXTZ-ysNxkpirnVnMKiZ5w"
+            },
+            "published_at" : "2013-09-06 12:13:45.962863",
+            "is_published" : true,
+            "created" : "2012-03-19T13:45:39.000000Z-0400",
+            "name" : "Robbins Law Office",
+            "business_type" : "Legal & Financial Services",
+            "updated" : "2012-05-29T11:13:16.000000Z-0400",
+            "time_zone" : ""
+         },
+         {
+            "location" : {
+               "address2" : "",
+               "neighborhood" : "",
+               "directions" : "",
+               "state" : "IN",
+               "city" : "Kokomo",
+               "address1" : "1200 E Firmin St",
+               "cross_street" : "",
+               "postal_code" : "46902",
+               "latitude" : 40.46801,
+               "country" : "US",
+               "longitude" : -86.11673
+            },
+            "email" : "",
+            "has_photos" : true,
+            "website" : "http://bmwinvestproperties.com/default.aspx",
+            "is_owner_verified" : true,
+            "phone" : "",
+            "location_id" : "bmw-properties",
+            "description" : "Blah",
+            "hasPhotos" : false,
+            "attributes" : {
+               "wheelchair_access" : true
+            },
+            "out_of_business" : false,
+            "time_zone" : "",
+            "updated" : "2012-07-02T13:08:45.000000Z-0400",
+            "business_type" : "Non Food & Beverage Retail",
+            "name" : "Bmw Properties",
+            "created" : "2012-03-22T14:29:57.000000Z-0400",
+            "is_published" : true,
+            "published_at" : "2013-09-06 12:13:45.958872",
+            "foreign_ids" : {
+               "foursquare" : "4f95bc17754af8efd41a7704",
+               "salesforce-real" : "a0Cd000000BNguSEAT",
+               "yelp" : "ypV03hS8jFNrrnkVEWLfSQ"
+            },
+            "hours" : {}
+         }
+      ],
+      "next" : "http://publishing-api.singleplatform.com/locations/updated_since?date=2012-11-16T18:34:04.000000Z-0500&limit=11"
+   }
+}

@@ -2,29 +2,33 @@ require 'cgi'
 
 module Singleplatform
   class Response
-    attr_accessor :code, :body, :next_page
+    attr_accessor :code, :body, :next_page, :origin
 
     def initialize(args)
       @code      = args[:code]
       @body      = args[:body]
-      @next_page = args[:body].next
+      @next_page = args[:body].respond_to?(:next) ? args[:body].next : nil
+      @origin    = args[:origin].to_s
     end
 
     # An iterator for retrieving the next page of results from
     #   API response.
     #
-    # @note Will only work with Client#locations_updated_since as
-    #   it's the only paginated response in the API at this time.
+    # @note Will only work with Client#locations_updated_since and
+    #   #photos_updated_since at this time.
     #
     # @return [Hashie::Mash]
     def next
-      return nil if next_page.nil?
+      return nil if next_page.nil? || next_page.empty?
       params = prepare_params(next_page)
       client = Singleplatform.new(
         client_id:     ENV['CLIENT_ID'],
         client_secret: ENV['CLIENT_SECRET']
       )
-      new_page = client.locations_updated_since(params.delete('date'), params)
+      new_page = client.public_send(
+                                    origin.to_sym,
+                                    params.delete('date'), params
+                                    )
       refresh(new_page)
     end
 

@@ -11,7 +11,7 @@ module Singleplatform
   class Client
     attr_accessor :base_url, :client_id, :client_secret
 
-    BASE_URL      = 'http://publishing-api.singleplatform.com'
+    BASE_URL = 'http://publishing-api.singleplatform.com'
 
     include Singleplatform::Client::Locations
     include Singleplatform::Client::Menus
@@ -55,6 +55,26 @@ module Singleplatform
     # @return [Boolean]
     def credentials_missing?
       client_id.nil? || client_secret.nil?
+    end
+
+    # Helper method to determine if any number of params are nil,
+    #   empty or just spaces.
+    #
+    # @return [Boolean]
+    def valid_params?(*args)
+      args.map { |a| return false if a.nil? || a.to_s.gsub(/\s/, '').empty? }
+      true
+    end
+
+    # Helper method to determine if a date is valid
+    #
+    # @return [Boolean]
+    def valid_date?(date)
+      d = date.split('-')
+      d.map! { |d| d.to_i }
+      Date.valid_date?(d[0], d[1], d[2])
+    rescue TypeError
+      return false
     end
   end
 end
