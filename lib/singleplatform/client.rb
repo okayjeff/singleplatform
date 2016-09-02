@@ -1,7 +1,6 @@
 require 'singleplatform/request'
 require 'singleplatform/response'
 require 'singleplatform/error'
-require 'singleplatform/helper'
 require 'singleplatform/client/locations'
 require 'singleplatform/client/menus'
 require 'singleplatform/client/photos'
@@ -17,7 +16,6 @@ module Singleplatform
     include Singleplatform::Client::Locations
     include Singleplatform::Client::Menus
     include Singleplatform::Client::Photos
-    include Singleplatform::Client::Helper
 
     # Initializes a new API Client Object
     #
@@ -57,6 +55,11 @@ module Singleplatform
     # @return [Boolean]
     def credentials_missing?
       client_id.nil? || client_secret.nil?
+    end
+
+    def params_blank?(*args)
+      args.map { |a| return true if a.nil? || a.to_s.gsub(/\s/, '').empty? }
+      false
     end
   end
 end

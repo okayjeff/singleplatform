@@ -24,13 +24,13 @@ module Singleplatform
       end
     end
 
-    class InvalidParametersError < Base
-      def initialize(msg = "Your request is missing required parameters.")
+    class InvalidLocationError < Base
+      def initialize(msg = "Your request must supply a valid location.")
         super
       end
     end
 
-    class InvalidDateError < InvalidParametersError
+    class InvalidDateError < Base
       def initialize(msg = "Your request must supply a valid date.")
         super
       end
