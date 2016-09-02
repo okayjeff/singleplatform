@@ -29,6 +29,13 @@ describe Singleplatform::Client::Photos do
         expect { @client.photos_for }.to raise_error(ArgumentError)
       end
     end
+
+    context "when given an invalid location id" do
+      it "raises an InvalidLocationError" do
+        expect { @client.photos_for('') }.to raise_error(Singleplatform::Error::InvalidLocationError)
+        expect { @client.photos_for(' ') }.to raise_error(Singleplatform::Error::InvalidLocationError)
+      end
+    end
   end
 
 end
