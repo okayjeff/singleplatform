@@ -84,9 +84,9 @@ See SinglePlatform's API documentation for the Menu schema with a full list of a
 Many SinglePlatform locations have photos, both at the business and menu-item level. Returns a ```Singleplatform::Response``` object whose body is an Array of menus.
 
 ```ruby
-response = client.photos_for('no')  # => #<Singleplatform::Response ... >
-response.body.first.type            # => "Product"
-response.body.first.url             # => "http://xyz.cloudfront.net/.../39bf7671bc7d006f4cef72d94eee24aeec7615d2.jpg"
+response = client.photos_for('nobu')  # => #<Singleplatform::Response ... >
+response.body.first.type              # => "Product"
+response.body.first.url               # => "http://xyz.cloudfront.net/.../39bf7671bc7d006f4cef72d94eee24aeec7615d2.jpg"
 ```
 
 #### Fetching all photos updated since a given date
