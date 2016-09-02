@@ -17,6 +17,7 @@ module Singleplatform
     include Singleplatform::Client::Locations
     include Singleplatform::Client::Menus
     include Singleplatform::Client::Photos
+    include Singleplatform::Client::Helper
 
     # Initializes a new API Client Object
     #
