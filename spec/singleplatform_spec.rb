@@ -1,4 +1,5 @@
 require 'singleplatform'
+require 'spec_helper'
 
 describe Singleplatform do
 

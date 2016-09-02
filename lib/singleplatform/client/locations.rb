@@ -4,11 +4,9 @@ module Singleplatform
       # Fetch information about a specific location
       #
       # @param id [String]
-      # @param options [Hash]
-      # @option options [String] :format Short menu ('short') available
       # @return [Singleplatform::Response]
-      def location(id, options = {})
-        url = generate_url("/locations/#{id}/", options)
+      def location(id)
+        url = generate_url("/locations/#{id}/")
         Request.get(url)
       end
 

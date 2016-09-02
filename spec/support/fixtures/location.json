@@ -1,0 +1,114 @@
+{
+   "data" : {
+      "updated" : "2014-03-31T14:28:42",
+      "published_at" : "2013-09-06T12:14:53",
+      "is_owner_verified" : true,
+      "out_of_business" : false,
+      "phone" : "619-298-6802",
+      "email" : "info@dinecrg.com",
+      "location" : {
+         "postal_code" : "92101",
+         "directions" : "Across from the San Diego International Airport (Terminal 1).  Next to the Sunroad Marina.",
+         "country" : "US",
+         "neighborhood" : "Harbor Island",
+         "state" : "CA",
+         "longitude" : -117.19511,
+         "latitude" : 32.72495,
+         "cross_street" : "N Harbor Drive",
+         "city" : "San Diego",
+         "address1" : "880 Harbor Island Dr",
+         "address2" : "Test Suit"
+      },
+      "foreign_ids" : {
+         "facebook" : "467871149918479",
+         "yelp" : "sNhSsshDp5fuIhjl99tfng",
+         "foursquare" : "48331810f964a520e24f1fe3"
+      },
+      "hours" : {
+         "Wednesday" : [
+            {
+               "closing" : "09:00pm",
+               "opening" : "11:30am",
+               "description" : ""
+            }
+         ],
+         "Saturday" : [
+            {
+               "description" : "",
+               "opening" : "11:30am",
+               "closing" : "10:00pm"
+            }
+         ],
+         "Sunday" : [
+            {
+               "closing" : "09:30pm",
+               "description" : "",
+               "opening" : "11:30am"
+            }
+         ],
+         "Monday" : [
+            {
+               "closing" : "09:00pm",
+               "description" : "",
+               "opening" : "11:30am"
+            }
+         ],
+         "Tuesday" : [
+            {
+               "description" : "",
+               "opening" : "11:30am",
+               "closing" : "09:00pm"
+            }
+         ],
+         "Thursday" : [
+            {
+               "opening" : "11:30am",
+               "description" : "",
+               "closing" : "09:00pm"
+            }
+         ],
+         "Friday" : [
+            {
+               "closing" : "10:00pm",
+               "opening" : "11:30am",
+               "description" : ""
+            }
+         ]
+      },
+      "created" : "2011-12-01T00:00:00",
+      "location_id" : "island-prime",
+      "description" : "Resting on stilts atop San Diego Bay overlooking the city skyline and Coronado, there",
+      "name" : "Island Prime",
+      "website" : "http://www.islandprime.com/",
+      "attributes" : {
+         "delivery" : true,
+         "alcohol" : "Full Bar",
+         "cuisine" : [
+            "American - Contemporary",
+            "American - Traditional",
+            "Seafood",
+            "Steakhouse"
+         ],
+         "wheelchair_access" : true,
+         "drive_thru" : true,
+         "reservations" : true,
+         "dine_in" : true,
+         "catering" : true,
+         "meals_served" : [
+            "Lunch",
+            "Dinner"
+         ],
+         "payment_types_accepted" : [
+            "All Major Cards"
+         ],
+         "take_out" : true,
+         "price_rating" : "3",
+         "average_price" : "12"
+      },
+      "time_zone" : "PST",
+      "business_type" : "Restaurant",
+      "is_published" : true,
+      "has_photos" : true
+   },
+   "code" : 200
+}
