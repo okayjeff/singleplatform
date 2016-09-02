@@ -11,7 +11,7 @@ module Singleplatform
   class Client
     attr_accessor :base_url, :client_id, :client_secret
 
-    BASE_URL      = 'http://publishing-api.singleplatform.com'
+    BASE_URL = 'http://publishing-api.singleplatform.com'
 
     include Singleplatform::Client::Locations
     include Singleplatform::Client::Menus

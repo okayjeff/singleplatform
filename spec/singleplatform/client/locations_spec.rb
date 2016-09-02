@@ -36,6 +36,13 @@ describe 'Singleplatform::Client::Locations' do
         expect { @client.location('island-prime', 'another-argument') }.to raise_error(ArgumentError)
       end
     end
+
+    context "when given an invalid location id" do
+      it "raises an InvalidLocationError" do
+        expect { @client.location('') }.to raise_error(Singleplatform::Error::InvalidLocationError)
+        expect { @client.location(' ') }.to raise_error(Singleplatform::Error::InvalidLocationError)
+      end
+    end
   end
 
   describe ".locations_updated_since" do
