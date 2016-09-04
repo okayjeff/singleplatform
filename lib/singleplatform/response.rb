@@ -26,9 +26,9 @@ module Singleplatform
         client_secret: ENV['CLIENT_SECRET']
       )
       new_page = client.public_send(
-                                    origin.to_sym,
-                                    params.delete('date'), params
-                                    )
+                   origin.to_sym,
+                   params.delete('date'), params
+                 )
       refresh(new_page)
     end
 
