@@ -15,10 +15,7 @@ module Singleplatform
       if tries -= 1 > 0
         retry
       end
-      raise(
-        Error::RequestError,
-        "Unable to transmit request to SinglePlatform. Try again later or contact technical support."
-      )
+      raise Error::RequestError
     else
       raise(
         Error::ApiError,
