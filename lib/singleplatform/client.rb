@@ -73,7 +73,7 @@ module Singleplatform
     # @return [Boolean]
     def valid_date?(date)
       d = date.to_s.split('-')
-      d.map! { |d| d.to_i }
+      d.map!(&:to_i)
       Date.valid_date?(d[0], d[1], d[2])
     rescue TypeError
       return false
