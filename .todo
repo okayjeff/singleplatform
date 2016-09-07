@@ -1,0 +1,10 @@
+- handle response status codes where not 200 (status code)
+- implement /locations/{id}/all endpoint
+- New response type with iterator (next), which passes path+params to locations_updated_since
+- be defensive, checking for empty/nil
+- add test coverage for Response handling
+- RSpec (nested expecations)
+- Gemcutter
+- CodeClimate
+- TravisCI
+- License file (MIT)
