@@ -12,9 +12,7 @@ module Singleplatform
       response = HTTParty.get(url)
     rescue
       sleep 3
-      if tries -= 1 > 0
-        retry
-      end
+      retry if (tries -= 1) > 0
       raise Error::RequestError
     else
       raise(
