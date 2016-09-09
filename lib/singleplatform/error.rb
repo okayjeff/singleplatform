@@ -18,6 +18,12 @@ module Singleplatform
       end
     end
 
+    class RequestError < Base
+      def initialize(msg = "Unable to transmit HTTP request to SinglePlatform.")
+        super
+      end
+    end
+
     class MissingParametersError < Base
       def initialize(msg = "Your request is missing required parameters.")
         super

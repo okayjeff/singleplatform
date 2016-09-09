@@ -12,13 +12,8 @@ module Singleplatform
       response = HTTParty.get(url)
     rescue
       sleep 3
-      if tries -= 1 > 0
-        retry
-      end
-      raise(
-        Error::RequestError,
-        "Unable to transmit request to SinglePlatform. Try again later or contact technical support."
-      )
+      retry if (tries -= 1) > 0
+      raise Error::RequestError
     else
       raise(
         Error::ApiError,
@@ -27,8 +22,8 @@ module Singleplatform
       Response.new(
         code:   response.code,
         body:   self.parse_response_body(response.body),
-        # Pass the calling method to the Response object so it knows which
-        # method to call when API results are iterable
+        # Pass the calling method to the Response object so Response#next 
+        # knows which method to call when API results are iterable.
         origin: caller_locations(1,1)[0].label
       )
     end

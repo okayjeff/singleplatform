@@ -26,12 +26,4 @@ describe Singleplatform::Client do
       end
     end
   end
-
-  describe ".generate_url" do
-    context "given a valid path and params" do
-      it "correctly generates a URL" do
-        expect(@client.generate_url(@path, @params)).to eql(@url)
-      end
-    end
-  end
 end

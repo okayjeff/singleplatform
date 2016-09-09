@@ -27,6 +27,8 @@ module Singleplatform
       raise Error::MissingCredentialsError if credentials_missing?
     end
 
+    private
+
     # Form the complete URL for a given endpoint
     # 
     # @note Signature must be the last parameter
@@ -70,11 +72,9 @@ module Singleplatform
     #
     # @return [Boolean]
     def valid_date?(date)
-      d = date.split('-')
-      d.map! { |d| d.to_i }
-      Date.valid_date?(d[0], d[1], d[2])
-    rescue TypeError
-      return false
+      return false if date.index(/[^-0-9]/)
+      y, m, d = date.to_s.split('-')
+      Date.valid_date?(y.to_i, m.to_i, d.to_i)
     end
   end
 end

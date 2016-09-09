@@ -72,6 +72,7 @@ describe 'Singleplatform::Client::Locations' do
         expect { @client.locations_updated_since('2016-9') }.to raise_error(Singleplatform::Error::InvalidDateError)
         expect { @client.locations_updated_since('2016-9-') }.to raise_error(Singleplatform::Error::InvalidDateError)
         expect { @client.locations_updated_since('2016-9-31') }.to raise_error(Singleplatform::Error::InvalidDateError)
+        expect { @client.locations_updated_since('2016-9-3w1') }.to raise_error(Singleplatform::Error::InvalidDateError)
       end
     end
   end
