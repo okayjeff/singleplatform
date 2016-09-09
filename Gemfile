@@ -6,5 +6,6 @@ gem 'hashie'
 
 group :test do
   gem 'rspec'
-  gem 'webmock'  
+  gem 'webmock'
+  gem 'rake'
 end
