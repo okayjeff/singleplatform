@@ -1,6 +1,8 @@
 # SinglePlatform API Ruby Client
 This is a wrapper for accessing SinglePlatform's API. Please see [SinglePlatform's official API documentation](http://docs.singleplatform.com/spv3/) for information on obtaining API credentials.
 
+[![Code Climate](https://codeclimate.com/github/okayjeff/singleplatform/badges/gpa.svg)](https://codeclimate.com/github/okayjeff/singleplatform)
+
 ## Installation
 ```
 gem install singleplatform
