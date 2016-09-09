@@ -12,10 +12,10 @@ module Singleplatform
     end
 
     # An iterator for retrieving the next page of results from
-    #   API response.
+    # API response.
     #
     # @note Will only work with Client#locations_updated_since and
-    #   #photos_updated_since at this time.
+    # #photos_updated_since at this time.
     #
     # @return [Hashie::Mash]
     def next
