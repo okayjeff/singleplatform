@@ -27,8 +27,8 @@ The gem uses a client model to query against the API. Create a client with your 
 require 'singleplatform'
 
 client = Singleplatform.new(
-  client_id:     ENV['CLIENT_ID']
-  client_secret: ENV['CLIENT_SECRET']
+  client_id:     ENV['SINGLEPLATFORM_CLIENT_ID']
+  client_secret: ENV['SINGLEPLATFORM_CLIENT_SECRET']
 )
 ```
 
