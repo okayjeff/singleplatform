@@ -72,9 +72,11 @@ module Singleplatform
     #
     # @return [Boolean]
     def valid_date?(date)
-      return false if date.index(/[^-0-9]/)
-      y, m, d = date.to_s.split('-')
-      Date.valid_date?(y.to_i, m.to_i, d.to_i)
+      begin
+        return (not date.to_date.nil?)
+      rescue StandardError => e
+        return false
+      end
     end
   end
 end
