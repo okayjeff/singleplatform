@@ -9,8 +9,8 @@ describe Singleplatform::Response do
       client_id:     'purplespacesuitfrogboots1',
       client_secret: 'yellowsubmarinesresonatewithmeandmybestbros'
     }
-    ENV['CLIENT_ID'] = @creds[:client_id]
-    ENV['CLIENT_SECRET'] = @creds[:client_secret]
+    ENV['SINGLEPLATFORM_CLIENT_ID'] = @creds[:client_id]
+    ENV['SINGLEPLATFORM_CLIENT_SECRET'] = @creds[:client_secret]
     @client = Singleplatform::Client.new(@creds)
     @updated_since = File.open(Dir.pwd + '/spec/support/fixtures/updated_since.json').read
   end

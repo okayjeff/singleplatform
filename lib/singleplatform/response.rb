@@ -22,8 +22,8 @@ module Singleplatform
       return nil if next_page.nil? || next_page.empty?
       params = prepare_params(next_page)
       client = Singleplatform.new(
-        client_id:     ENV['CLIENT_ID'],
-        client_secret: ENV['CLIENT_SECRET']
+        client_id:     ENV['SINGLEPLATFORM_CLIENT_ID'],
+        client_secret: ENV['SINGLEPLATFORM_CLIENT_SECRET']
       )
       new_page = client.public_send(
                    origin.to_sym,
@@ -58,7 +58,7 @@ module Singleplatform
     # @return [Hash]
     def prepare_params(url)
       params = parse_params(url)
-      params['client'] = ENV['CLIENT_ID']
+      params['client'] = ENV['SINGLEPLATFORM_CLIENT_ID']
       params
     end
   end
