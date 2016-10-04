@@ -73,7 +73,7 @@ module Singleplatform
     # @return [Boolean]
     def valid_date?(date)
       begin
-        return (not date.to_date.nil?)
+        return (not DateTime.parse(date).nil?)
       rescue StandardError => e
         return false
       end
