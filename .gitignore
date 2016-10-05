@@ -3,3 +3,4 @@
 *.gem
 .ruby-version
 .ruby-gemset
+.todo
