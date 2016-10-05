@@ -27,7 +27,7 @@ module Singleplatform
       )
       new_page = client.public_send(
                    origin.to_sym,
-                   params.delete('date'), params
+                   params.delete('date').first, params
                  )
       refresh(new_page)
     end

@@ -72,11 +72,9 @@ module Singleplatform
     #
     # @return [Boolean]
     def valid_date?(date)
-      begin
-        return (not DateTime.parse(date).nil?)
-      rescue StandardError => e
-        return false
-      end
+      return (not DateTime.parse(date).nil?)
+    rescue StandardError => e
+      return false
     end
   end
 end
