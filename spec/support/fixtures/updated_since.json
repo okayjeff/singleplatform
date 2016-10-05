@@ -228,6 +228,6 @@
             "hours" : {}
          }
       ],
-      "next" : "http://publishing-api.singleplatform.com/locations/updated_since?date=2012-11-16T18:34:04.000000Z-0500&limit=11"
+      "next" : "http://publishing-api.singleplatform.com/locations/updated_since?date=2012-11-16T18:34:04&limit=11"
    }
 }
